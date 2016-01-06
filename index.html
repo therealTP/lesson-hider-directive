@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="lessonApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body ng-controller="lessonCtrl">
+    <h3>Super Fancy Custom App</h3>
+    <h5>Lessons</h5>
+    Cross Out Scheduled Lessons: <input ng-model="toggle" ng-change="testFcn()" type="checkbox">
+    <lesson-hider ng-repeat="lesson in lessons" lesson="lesson" toggle="toggle" day-alert="announceDay(lesson, day)" delete-lesson="deleteLesson(day)">
+    </lesson-hider>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/lessonCtrl.js"></script>
+    <script src="js/lessonSvc.js"></script>
+    <script src="js/lessonHider.js"></script>
+  </body>
+</html>
